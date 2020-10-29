@@ -28,16 +28,17 @@ function setup() {
 }
 
 let format = (i) => (i < 10 ? "0" + i : i);
-console.log(format(1));
+//console.log(format(1));
 
 function cocklText(s, m, h) {
+  let apm = (h) => (h <= 12 ? "AM" : "PM");
   push();
   rotate(90);
   translate(-200, -200);
   fill(255);
   textSize(20);
   textAlign(CENTER);
-  text(format(h) + ":" + format(m) + ":" + format(s), 50, 30);
+  text(format(h) + ":" + format(m) + ":" + format(s) + " " + apm(h), 70, 30);
   pop();
 }
 
