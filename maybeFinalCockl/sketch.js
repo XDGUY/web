@@ -38,7 +38,11 @@ function cocklText(s, m, h) {
   fill(255);
   textSize(20);
   textAlign(CENTER);
-  text(format(h) + ":" + format(m) + ":" + format(s) + " " + apm(h), 70, 30);
+  text(
+    format(h % 12) + ":" + format(m) + ":" + format(s) + " " + apm(h),
+    70,
+    30
+  );
   pop();
 }
 
