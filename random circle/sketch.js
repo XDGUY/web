@@ -37,7 +37,7 @@ function ranNoRepeat(arr){
     arr[n]=i;
     flag[n]=1;
   }
-  return arr;
+  return arr; 
 }
 
 let a;
