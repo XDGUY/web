@@ -10,10 +10,14 @@
     <p>記得記得白色向上</p>
     <div class="main" id="inputf">
         <input id="noRange" placeholder="input a range in accending order eg. 6, 16">
-        <p id="outputOdd">press and change</p>
-        <button onclick="copyText("outputOdd")">Copy text</button>
-        <p id="outputEven">boom</p>
-        <button onclick="copyText("outputEven")">Copy text</button>
+        <br><br><br>
+        <textarea id="outputOdd"></textarea>
+        <br><br><br>
+        <button onclick="copyText('outputOdd')">Copy text</button>
+        <br><br><br>
+        <textarea id="outputEven"></textarea>
+        <br><br><br>
+        <button onclick="copyText('outputEven')">Copy text</button>
         <br><br><br>
         <button onclick="process()"> Run</button>
     </div>
@@ -43,6 +47,8 @@
             }
             console.table(arrOdd);
             console.table(arrEven);
+            document.getElementById("outputOdd").value=arrOdd;
+            document.getElementById("outputEven").value=arrEven;
             document.getElementById("outputOdd").innerHTML=arrOdd;
             document.getElementById("outputEven").innerHTML=arrEven;
         }
