@@ -7,9 +7,14 @@
     <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
+    <p>記得記得白色向上</p>
     <div class="main" id="inputf">
         <input id="noRange" placeholder="input a range in accending order eg. 6, 16">
-        <p id="output"></p>
+        <p id="outputOdd">press and change</p>
+        <button onclick="copyText("outputOdd")">Copy text</button>
+        <p id="outputEven">boom</p>
+        <button onclick="copyText("outputEven")">Copy text</button>
+        <br><br><br>
         <button onclick="process()"> Run</button>
     </div>
     <script>
@@ -20,12 +25,13 @@
         }
         return arr;
         }
+
         function process(){
             var n=document.getElementById("noRange").value;
             let reg=/\d+/g;    //extract all (+) number (maybe %d) globally(g), it is string so need to change to int
             let range=n.match(reg);
-            let arr=intialise(0);
-            let arrr=intialise(0);
+            let arrOdd=intialise(0);
+            let arrEven=intialise(0);
             //document.getElementById("output").innerHTML=range;
             for(let i=0; i<=1; i++){
                 range[i]=parseInt(range[i]); //regex from string to int
@@ -33,10 +39,19 @@
             console.table(range);
             console.log(range.length);
             for(let i=range[0];i<=range[1];i++){
-                i%2 ? arr.push(i) : arrr.push(i);
+                i%2 ? arrOdd.push(i) : arrEven.push(i);
             }
-            console.table(arr);
-            console.table(arrr);
+            console.table(arrOdd);
+            console.table(arrEven);
+            document.getElementById("outputOdd").innerHTML=arrOdd;
+            document.getElementById("outputEven").innerHTML=arrEven;
+        }
+
+        function copyText(id){
+            var cpyTxt = document.getElementById(id);
+            cpyTxt.select();
+            cpyTxt.setSelectionRange(0, 99999); /*For mobile devices*/
+            document.execCommand("copy");
         }
     </script>
 </body>
