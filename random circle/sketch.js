@@ -26,7 +26,7 @@ function intialiseAcc(n){    //starting from 0 to n-1, with size n
   console.log(ran(2,5));
 }*/
 
-function ranNoRepeat(arr){
+function ranNoRepeat(arr){    //random without repeated ranged in a to b
   let flag=intialise(10);    //if flag is used, then flag[n]=1, 1 is occupied
   let n=ran(0, 10);
   arr=intialiseAcc(10);
@@ -46,7 +46,7 @@ console.table(a);
 
 function draw() {
   background(220);
-  for(let i=0;i<=2;i++){
+  for(let i=0;i<10;i++){
     ellipse(i*100, i*100, 100, 100);
   }
 }
